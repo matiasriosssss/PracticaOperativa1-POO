@@ -16,27 +16,37 @@ class manejadorCliente:
             self.agrega(nuevoCliente)
     def opcion1(self, DNI, manejadorR):
         centinela = True
-        for i in range(len(self.getListaa())):
+        i = 0
+        while i < len(self.getListaa()) and centinela:
             if self.getListaa()[i].getDNI() == DNI:
                 print(f"DNI: {DNI}                       Apellido y Nombre: {self.getListaa()[i].getNomCompleto()}")
                 print(f"Patente: {self.getListaa()[i].getPatente()}             Vehiculo: {self.getListaa()[i].getVehiculo()}")
                 manejadorR.cont_opcion1(self.getListaa()[i].getPatente())
                 centinela = False
+            i+=1
         if centinela:
             print("No se encontro cliente con ese numero de dni")
     def cambiaEstado(self, pat):
-        for i in range(len(self.getListaa())):
+        i=0
+        centinela = True
+        while i < len(self.getListaa()) and centinela:
             if self.getListaa()[i].getPatente() == pat:
                 self.getListaa()[i].cambiaE()
                 print(f"{self.getListaa()[i].getNomCompleto()}")
                 print(f"{self.getListaa()[i].getTel()}")
                 print(f"{self.getListaa()[i].getVehiculo()}")
+                centinela = False
+            i+=1
             
     def cont_opcion3(self, patente):
-        for i in range(len(self.getListaa())):
+        centinela = True
+        i=0
+        while i < len(self.getListaa()) and centinela:
             if self.getListaa()[i].getPatente() == patente:
                 print(f"Apellido y nombre: {self.getListaa()[i].getNomCompleto()} Tel: {self.getListaa()[i].getTel()}")
                 print(f"Patente: {patente}              Vehiculo: {self.getListaa()[i].getVehiculo()}")
+                centinela = False
+            i+=1
                 
     def opcion4(self):
          for i in range(len(self.getListaa())):
