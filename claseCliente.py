@@ -24,7 +24,7 @@ class cliente:
     def cambiaE(self):
         self.__estado = 'T'
         print("Estado cambiado con exito")
-    def __eq__(self, otro):
+    def __eq__(self, otro): ##SOBRECARGA DE OPERADOR (==)
         propio = str(self.__dni) + str(self.__nombre) + str(self.__apellido) + str(self.__telefono)
         otro = str(otro.getDNI()) + str(otro.getNombre()) + str(otro.getApellido()) + str(otro.getTel())
         if propio == otro:

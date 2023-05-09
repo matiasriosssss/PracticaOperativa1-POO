@@ -49,7 +49,7 @@ class manejadorCliente:
             i+=1
                 
     def opcion4(self):
-         for i in range(len(self.getListaa())):
+         for i in range(len(self.getListaa())):  ##CICLO FOR ANIDADO UTILIZADO DEBIDO A QUE DEBE COMPARAR TODAS LAS POSIBILIDADES, AUNQUE ENCUENTRE LO BUSCADO DEBE SEGUIR ITERANDO
              for k in range(len(self.getListaa())):
                  if self.getListaa()[i] == self.getListaa()[k] and i != k:
                     print(f"{self.getListaa()[i].getDNI()}")

@@ -17,7 +17,7 @@ class manejadorRep:
     
     def cont_opcion1(self, patente):
         total=0
-        for i in range(len(self.getListaa())):
+        for i in range(len(self.getListaa())): ##CICLO FOR UTILIZADO DEBIDO A QUE SI ENCUENTRA LO BUSCADO DEBE SEGUIR ITERANDO
             if patente == self.getListaa()[i].getPatente():
                 subtotal= int(self.getListaa()[i].getPrecioRep()) + int(self.getListaa()[i].getPrecioMano())
                 total += subtotal
@@ -26,16 +26,16 @@ class manejadorRep:
         print(f"Total = {total}")
     def opcion2(self, patente, manejadorC):
         centinela = True
-        for i in range(len(self.getListaa())):
+        for i in range(len(self.getListaa())):  ##CICLO FOR UTILIZADO DEBIDO A QUE SI ENCUENTRA LO BUSCADO DEBE SEGUIR ITERANDO
             if patente == self.getListaa()[i].getPatente() and self.getListaa()[i].getEstado() == 'T':
                 manejadorC.cambiaEstado(patente)
                 tot =  int(self.getListaa()[i].getPrecioRep()) + int(self.getListaa()[i].getPrecioMano())
                 print(f"{tot}")
-                centinela = False
+                centinela = False 
         if centinela:
             print(f"El auto con pantente: {patente} aun no esta listo")
     def opcion3(self, manejadorC):
-        for i in range(len(self.getListaa())):
+        for i in range(len(self.getListaa())): ####CICLO FOR UTILIZADO DEBIDO A QUE SI ENCUENTRA LO BUSCADO DEBE SEGUIR ITERANDO
             if self.getListaa()[i].getEstado() == 'P':
                 manejadorC.cont_opcion3(self.getListaa()[i].getPatente())
                 print(f"Reparacion: {self.getListaa()[i].getReparacion()}")
